@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House Rental Website</title>
+<style>
+    /* CSS Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"], select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <h1>House Rental</h1>
+    </header>
+    <div class="container">
+        <h2>House Rental Form</h2>
+        <form id="rentalForm" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="houseType">House Type:</label>
+            <select id="houseType" name="houseType" required>
+                <option value="">Select</option>
+                <option value="Apartment">Apartment</option>
+                <option value="House">House</option>
+                <option value="Condo">Condo</option>
+            </select>
+
+            <label>Features:</label><br>
+            <input type="checkbox" id="feature1" name="feature1"> <label for="feature1">Swimming Pool</label><br>
+            <input type="checkbox" id="feature2" name="feature2"> <label for="feature2">Garden</label><br>
+            <input type="checkbox" id="feature3" name="feature3"> <label for="feature3">Parking Space</label><br>
+
+            <label>Rent Duration:</label><br>
+            <input type="radio" id="duration1" name="duration" value="Short Term"> <label for="duration1">Short Term</label><br>
+            <input type="radio" id="duration2" name="duration" value="Long Term"> <label for="duration2">Long Term</label><br>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>Address: 123 Main Street, Cityville</p>
+            <p>Email: info@houserental.com</p>
+            <p>Phone: 555-1234-5678</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript Form Validation
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var houseType = document.getElementById('houseType').value;
+
+            if (name === '' || email === '' || phone === '' || houseType === '') {
+                alert('Please fill in all fields');
+                return false;
+            }
+
+            // Additional validation logic can be added here
+
+            return true;
+        }
+    </script>
+</body>
+</html>
